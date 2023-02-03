@@ -1,5 +1,6 @@
 import React from "react";
 import FilterBox from "./FilterBox";
+import Post from "./Post";
 import PostBox from "./PostBox";
 
 export default function Main() {
@@ -11,7 +12,9 @@ export default function Main() {
             <div className="filterPosts">
                 <FilterBox />
             </div>
-            <div className="feed">Feed</div>
+            <div className="feed">
+                <Post />
+            </div>
             <div className="sidebar">Sidebar on right</div>
         </div>
     )

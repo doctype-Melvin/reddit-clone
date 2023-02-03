@@ -147,3 +147,73 @@ html, body, #root {
 
 
 /* Filter Box End */
+
+/* Post Start */
+
+.postCt {
+  display: flex;
+  background-color: var(--mid);
+  border-radius: 5px;
+  border: .75px solid var(--light);
+}
+
+.postBody {
+  padding: 5px 10px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lighter);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.upArrow, .downArrow {
+  width: 25px;
+}
+
+.upArrow:hover, .downArrow:hover {
+  cursor: pointer;
+}
+
+.voteCount {
+  margin: 10px 0;
+}
+
+.subreddit {
+  font-size: .65vw;
+  font-weight: 600;
+}
+
+.postTitle, .postText {
+  color: var(--lightest-2);
+}
+
+.postFoot {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.footEl {
+  display: flex;
+  align-items: center;
+}
+
+.footEl:hover {
+  cursor: pointer;
+}
+
+.footIcon {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.footText {
+  color: var(--lightest);
+}
+
+/* Post End */
