@@ -7,6 +7,18 @@ html, body, #root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
   margin: 0;
+  background-color: var(--main);
+  color: var(--lightest);
+}
+
+:root {
+  --main: #030303;
+  --lighter: #151516;
+  --mid: #1a1a1b;
+  --light: #343536;
+  --red: #ff4500;
+  --lightest: #d7dadc;
+  --lightest-2: #e9ebed;
 }
 
 /* Main Start */
@@ -44,14 +56,94 @@ html, body, #root {
 
 /* Post Box Start */
 .postBox {
-  background-color:yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: solid .75px var(--light);
+  margin-bottom: 20px;
+}
+
+.postBox, .postBtn {
+  background-color: var(--lighter);
+
+}
+
+.postInput, .postBtn {  
+  color: var(--lightest);
+  border-radius: 5px;
 }
 
 .userAv {
   border-radius: 25px;
   max-width: 50px;
-  background-color: red;
+  background-color: var(--lightest);
+}
+
+.userAv:hover {
+  cursor: pointer;
+}
+
+.postInput {
+  width: 75%;
+  padding: 5px 10px;
+  font-size: .9vw;  
+  border: solid var(--light) 1px;
+  background-color: var(--mid);
+}
+
+.postBtn {
+  padding: 5px 15px;
+  font-size: .75vw;
+  border: none;
+}
+
+.postBtn:hover {
+  background-color: var(--light);
+  cursor: pointer;
+}
+
+.postBtn:active {
+  background-color: var(--red);
+}
+
+/* Post Box End */
+
+/* Filter Box Start */
+.filterBox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--lighter);
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: solid .75px var(--light);
+  margin-bottom: 20px;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  background-color: var(--lighter);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.filterBtn:hover {
+  cursor: pointer;
+  background-color: var(--light);
+}
+
+.filterIcon {
+  width: 20px;
+}
+
+.filterText {
+  font-size: .9vw;
+  margin-left: 5px;
 }
 
 
-/* Post Box End */
+/* Filter Box End */

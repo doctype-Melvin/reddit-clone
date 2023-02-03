@@ -1,4 +1,5 @@
 import React from "react";
+import FilterBox from "./FilterBox";
 import PostBox from "./PostBox";
 
 export default function Main() {
@@ -7,7 +8,9 @@ export default function Main() {
             <div className="createPost">
                 <PostBox />
             </div>
-            <div className="filterPosts">Filter Posts Box</div>
+            <div className="filterPosts">
+                <FilterBox />
+            </div>
             <div className="feed">Feed</div>
             <div className="sidebar">Sidebar on right</div>
         </div>
