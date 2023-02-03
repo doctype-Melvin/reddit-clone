@@ -1,3 +1,57 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+html, body, #root {
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main Start */
+
+.mainCt {
+  display: grid;
+  grid-template-areas: 
+  ". create sidebar ."
+  ". filter sidebar ."
+  ". feed sidebar .";
+  grid-template-columns: .5fr 1fr .5fr .5fr;
+  grid-template-rows: repeat(auto-fit, 1fr);
+}
+
+.createPost {
+  grid-area: create;
+}
+
+.filterPosts {
+  grid-area: filter;
+}
+
+.feed {
+  grid-area: feed;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+/* Main End */
+
+/* Header Start */
+/* Header End */
+
+/* Post Box Start */
+.postBox {
+  background-color:yellow;
+}
+
+.userAv {
+  border-radius: 25px;
+  max-width: 50px;
+  background-color: red;
+}
+
+
+/* Post Box End */
