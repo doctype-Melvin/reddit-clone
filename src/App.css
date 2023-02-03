@@ -176,6 +176,8 @@ html, body, #root {
 
 .upArrow:hover, .downArrow:hover {
   cursor: pointer;
+  background-color: var(--red);
+  border-radius: 25px;
 }
 
 .voteCount {
@@ -194,17 +196,18 @@ html, body, #root {
 .postFoot {
   display: flex;
   width: 100%;
-  justify-content: space-around;
-  padding: 5px;
 }
 
 .footEl {
   display: flex;
   align-items: center;
+  padding: 5px 10px;
+  margin-right: 5px;
 }
 
 .footEl:hover {
   cursor: pointer;
+  background-color: var(--light);
 }
 
 .footIcon {
