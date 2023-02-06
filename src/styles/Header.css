@@ -13,6 +13,7 @@
     align-items: center;
     margin-bottom: 15px;
     width: 100%;
+    background-color: var(--mid);
   }
 
 .logo {
@@ -42,7 +43,7 @@
 }
 
 .searchBar {
-    background-color: var(--mid);
+    background-color: var(--lighter);
     color: var(--lightest);
     font-size: 1vw;
     border-radius: 25px;
