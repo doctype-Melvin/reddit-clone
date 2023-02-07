@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/Sidebar.css'
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+
+  const [ login, setLogin ] = useState(false)
+
+  const toggleLog = () => setLogin(prevState => !prevState)
+
     return (
         <div className="sidebar">
             <div className="nav">
                 <ul>
-                    <li><a>Profile</a></li>
-                    <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
+                        <li><a>Profile</a></li>
+                        <li><a>Settings</a></li>
+                    <li>
+                        {login ? (
+                            <a onClick={toggleLog}>Logout</a>
+                        ) : (
+                            <a onClick={toggleLog}>Login</a>
+                        )
+                        }
+                    </li>
                 </ul>
             </div>
             <div className="footer">

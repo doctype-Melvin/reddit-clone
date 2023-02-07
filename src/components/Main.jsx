@@ -8,14 +8,14 @@ import Submit from "./Submit";
 export default function Main() {
 
     const [ isPosting, setIsPosting ] = useState(0)
-
+    
     // useEffect to rerender feed data
 
     const handlePosting = () => {
         setIsPosting(prevState => !prevState)
     }
 
-    return (
+      return (
         <div className="mainCt">
             { isPosting ? (
             <>

@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import '../styles/Submit.css'
 
 export default function Submit(props) {
-
+// Make component reusable for comments
     const textareaRef = useRef(null)
     const [ text, setText ] = useState('')
     const [ bold, setBold ] = useState(false)
+    const [ italic, setItalic ] = useState(false)
     const [ selectionStart, setSelectionStart ] = useState(0)
     const [ selectionEnd, setSelectionEnd ] = useState(0)
 
@@ -29,6 +30,23 @@ export default function Submit(props) {
             text.slice(selectionEnd)
         setText(newText)
         setBold(true)
+        }
+    }
+
+    const handleItalic = () => {
+        let newText = text
+        const selectedText = text.slice(selectionStart, selectionEnd)
+        if (italic) {
+            newText = text.replace(`<i>${selectedText}</i>`, selectedText)
+            setText(newText)
+            setItalic(false)
+        }else {
+            newText = 
+            text.slice(0, selectionStart) +
+            `<i>${selectedText}</i>` +
+            text.slice(selectionEnd)
+        setText(newText)
+        setItalic(true)
         }
     }
  
@@ -55,7 +73,7 @@ export default function Submit(props) {
                 <div className="postDraft">
                     <div className="textTransform">
                         <span><button type="button" className="transBtn" onClick={handleBold}><b>B</b></button></span>
-                        <span><button type="button" className="transBtn"><em>I</em></button></span>
+                        <span><button type="button" className="transBtn" onClick={handleItalic}><em>I</em></button></span>
                         <span><button type="button" className="transBtn">&#128279;</button></span>
                         <span><button type="button" className="transBtn">S</button></span>
                         <span><button type="button" className="transBtn">&lt;c&gt;</button></span>
