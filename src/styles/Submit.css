@@ -1,0 +1,30 @@
+:root {
+    --main: #030303;
+    --lighter: #151516;
+    --mid: #1a1a1b;
+    --light: #343536;
+    --red: #ff4500;
+    --lightest: #d7dadc;
+    --lightest-2: #e9ebed;
+  }
+
+.selectMode {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.selectMode > li {
+    background-color: var(--lighter);
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+}
+
+.selectMode > li:hover {
+    background-color: var(--light);
+}
