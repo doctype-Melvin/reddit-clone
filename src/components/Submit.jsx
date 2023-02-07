@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import '../styles/Submit.css'
 
 export default function Submit(props) {
+
+    const textareaRef = useRef(null)
+    const [ text, setText ] = useState('')
+    const [ bold, setBold ] = useState(false)
+    const [ selectionStart, setSelectionStart ] = useState(0)
+    const [ selectionEnd, setSelectionEnd ] = useState(0)
+
+    const handleTextSelect = () => {
+        const textarea = textareaRef.current
+        setSelectionStart(textarea.selectionStart)
+        setSelectionEnd(textarea.selectionEnd)
+    }
+
+    const handleBold = () => {
+        let newText = text
+        const selectedText = text.slice(selectionStart, selectionEnd)
+        if (bold) {
+            newText = text.replace(`**${selectedText}**`, selectedText)
+            setText(newText)
+            setBold(false)
+        }else {
+            newText = 
+            text.slice(0, selectionStart) +
+            `**${selectedText}**` +
+            text.slice(selectionEnd)
+        setText(newText)
+        setBold(true)
+        }
+    }
+ 
 
     return (
         <div className="createPost postPanel">
@@ -24,15 +54,19 @@ export default function Submit(props) {
                 />
                 <div className="postDraft">
                     <div className="textTransform">
-                        <span><button type="button">B</button></span>
-                        <span><button type="button">I</button></span>
-                        <span><button type="button">Link</button></span>
-                        <span><button type="button">S</button></span>
-                        <span><button type="button">C</button></span>
-                        <span><button type="button">A^</button></span>
+                        <span><button type="button" className="transBtn" onClick={handleBold}><b>B</b></button></span>
+                        <span><button type="button" className="transBtn"><em>I</em></button></span>
+                        <span><button type="button" className="transBtn">&#128279;</button></span>
+                        <span><button type="button" className="transBtn">S</button></span>
+                        <span><button type="button" className="transBtn">&lt;c&gt;</button></span>
+                        <span><button type="button" className="transBtn">A^</button></span>
                     </div>
                     <textarea className="draftText"
+                    ref={textareaRef}
                     placeholder="Text (optional)"
+                    value={text}
+                    onChange={e => setText(e.target.value)}
+                    onSelect={handleTextSelect}
                     />
                 </div>
             </div>
