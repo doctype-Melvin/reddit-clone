@@ -17,6 +17,10 @@
     align-items: center;
 }
 
+span {
+    margin-bottom: 10px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
