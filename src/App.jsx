@@ -7,6 +7,7 @@ import Login from './components/Login'
 function App() {
 
     const [ isLogin, setIsLogin ] = useState(false)
+    const [ loggedIn, setLoggedIn ] = useState(false)
 
   return (
     <div className="App">
@@ -17,10 +18,15 @@ function App() {
      {
      isLogin ? 
      <Login
-     setIsLogin={setIsLogin} /> : 
+     setIsLogin={setIsLogin}
+     setLoggedIn={setLoggedIn}
+     /> : 
      <Main
      setIsLogin={setIsLogin}
      isLogin={isLogin}
+     setLoggedIn={setLoggedIn}
+     loggedIn={loggedIn}
+
       />
       }
     </div>

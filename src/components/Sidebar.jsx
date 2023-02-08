@@ -1,11 +1,20 @@
 import React, { useState } from "react";
+import { auth as authOut } from '../firebaseConfig'
+import { signOut as signOutNow } from "firebase/auth";
 import '../styles/Sidebar.css'
 
+
 export default function Sidebar(props) {
+    console.log(props.isLogin)
 
   const [ login, setLogin ] = useState(false)
 
   const toggleLog = () => props.setIsLogin(prevState => !prevState)
+
+  const logoutUser = async () => {
+    await signOutNow(authOut)
+    props.setLoggedIn(prevState => !prevState)
+}
 
     return (
         <div className="sidebar">
@@ -14,8 +23,8 @@ export default function Sidebar(props) {
                         <li><a>Profile</a></li>
                         <li><a>Settings</a></li>
                     <li>
-                        {login ? (
-                            <a onClick={toggleLog}>Logout</a>
+                        {props.loggedIn ? (
+                            <a onClick={logoutUser}>Logout</a>
                         ) : (
                             <a onClick={toggleLog}>Login</a>
                         )

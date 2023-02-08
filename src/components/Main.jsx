@@ -25,6 +25,7 @@ export default function Main(props) {
                 <Sidebar
                 setIsLogin={props.setIsLogin}
                 isLogin={props.isLogin}
+                loggedIn={props.loggedIn}
                 />
             </div>
                 </>
@@ -45,6 +46,8 @@ export default function Main(props) {
                 <Sidebar 
                 setIsLogin={props.setIsLogin}
                 isLogin={props.isLogin}
+                setLoggedIn={props.setLoggedIn}
+                loggedIn={props.loggedIn}
                 />
             </div>
             </>

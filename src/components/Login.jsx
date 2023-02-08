@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword,
 onAuthStateChanged,
-signInWithEmailAndPassword,
-signOut
+signInWithEmailAndPassword
 } from 'firebase/auth'
 import { auth } from '../firebaseConfig'
 import '../styles/Login.css'
@@ -18,7 +17,9 @@ export default function Login(props) {
     // onAuthStateChanged(auth, (currentUser) => {
     //     console.log(currentUser)
     // })
-
+    const toggleLogin = () => props.setIsLogin(prevState => !prevState)
+    const loginState = () => props.setLoggedIn(prevState => !prevState)
+    
     const registerUser = async () => {
         try { 
             const user = await createUserWithEmailAndPassword(auth, regEmail, regPass)
@@ -30,25 +31,23 @@ export default function Login(props) {
     const loginUser = async () => {
         try {
             const user = await signInWithEmailAndPassword(auth, userEmail, userPassword)
-            console.log(`signed in as ${user}`)
+            loginState()
+            toggleLogin()
         } catch (error) {
             console.log(error.message)
         }
     }
 
-    const logoutUser = async () => {
-        await signOut(auth)
-    }
+  
 
-    const toggleLogin = () => props.setIsLogin(prevState => !prevState)
     return (
         <div className="loginCt">
             <div className="form">
                 <span>Sign Up </span>
-                <input type="email" name="email" placeholder="Email"
+                <input type="email" name="email" placeholder="Email" autoComplete="new-password"
                 onChange={(e) => setRegEmail(e.target.value)}
                 />
-                <input type="password" name="password" placeholder="Password"
+                <input type="password" name="password" placeholder="Password" autoComplete="new-password"
                 onChange={(e) => setRegPass(e.target.value)}
                 />
                 <button type="button" className="signInBtn" onClick={registerUser}>Sign Up</button>
