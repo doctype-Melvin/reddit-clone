@@ -9,7 +9,7 @@
   }
 
   .nav {
-    width: 50%;
+    width: fit-content;
   }
 
 .nav > ul {
@@ -28,6 +28,11 @@ ul > li {
 
 ul > li:hover {
     background-color: var(--red);
+    color: var(--lightest-2);
     cursor: pointer;
     transition: 0.2s;
+}
+
+.username {
+  font-size: .7vw;
 }

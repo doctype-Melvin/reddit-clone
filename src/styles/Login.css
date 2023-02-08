@@ -17,7 +17,7 @@
     align-items: center;
 }
 
-span {
+.sign {
     margin-bottom: 10px;
 }
 
@@ -30,7 +30,7 @@ span {
     padding: 30px 20px;
 }
 
-.form, .form > input, button {
+.form, .loginInput, .signInBtn {
     border-radius: 5px;
 }
 
@@ -53,7 +53,7 @@ span {
     width: 80%;
 }
 
-button {
+.signInBtn {
     width: 40%;
     background-color: var(--lighter);
     border: 1px solid var(--light);
@@ -62,13 +62,13 @@ button {
     font-size: .8vw;
 }
 
-button:hover {
+.signInBtn:hover {
     cursor: pointer;
     background-color: var(--lightest);
     color: var(--mid);
 }
 
-button:active {
+.signInBtn:active {
     background-color: var(--red);
     color: var(--lightest);
 }

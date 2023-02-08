@@ -6,8 +6,9 @@ import Sidebar from "./Sidebar";
 import Submit from "./Submit";
 
 export default function Main(props) {
-
+    
     const [ isPosting, setIsPosting ] = useState(0)
+    
     
     // useEffect to rerender feed data
 
@@ -26,6 +27,8 @@ export default function Main(props) {
                 setIsLogin={props.setIsLogin}
                 isLogin={props.isLogin}
                 loggedIn={props.loggedIn}
+                user={props.user}
+                setUser={props.setUser}
                 />
             </div>
                 </>
@@ -48,6 +51,8 @@ export default function Main(props) {
                 isLogin={props.isLogin}
                 setLoggedIn={props.setLoggedIn}
                 loggedIn={props.loggedIn}
+                user={props.user}
+                setUser={props.setUser}
                 />
             </div>
             </>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword,
-onAuthStateChanged,
-signInWithEmailAndPassword
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
 } from 'firebase/auth'
 import { auth } from '../firebaseConfig'
 import '../styles/Login.css'
@@ -12,13 +14,21 @@ export default function Login(props) {
     const [ regPass, setRegPass ] = useState('')
     const [ userEmail, setUserEmail ] = useState('')
     const [ userPassword, setUserPassword ] = useState('')
-    const [ user, setUser ] = useState({})
-
-    // onAuthStateChanged(auth, (currentUser) => {
-    //     console.log(currentUser)
-    // })
+    
     const toggleLogin = () => props.setIsLogin(prevState => !prevState)
     const loginState = () => props.setLoggedIn(prevState => !prevState)
+    
+    const provider = new GoogleAuthProvider()
+
+    const signInGoogle = () => {
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            props.setUser(result)
+            loginState()
+            toggleLogin()
+        }).catch((error) => console.log(error.message))
+    }
+
     
     const registerUser = async () => {
         try { 
@@ -31,6 +41,7 @@ export default function Login(props) {
     const loginUser = async () => {
         try {
             const user = await signInWithEmailAndPassword(auth, userEmail, userPassword)
+            props.setUser(user)
             loginState()
             toggleLogin()
         } catch (error) {
@@ -43,11 +54,15 @@ export default function Login(props) {
     return (
         <div className="loginCt">
             <div className="form">
-                <span>Sign Up </span>
-                <input type="email" name="email" placeholder="Email" autoComplete="new-password"
+                <span className="sign">Sign Up </span>
+                <input type="email" name="email" placeholder="Email" 
+                className="loginInput"
+                autoComplete="new-password"
                 onChange={(e) => setRegEmail(e.target.value)}
                 />
-                <input type="password" name="password" placeholder="Password" autoComplete="new-password"
+                <input type="password" name="password" placeholder="Password"
+                className="loginInput"
+                autoComplete="new-password"
                 onChange={(e) => setRegPass(e.target.value)}
                 />
                 <button type="button" className="signInBtn" onClick={registerUser}>Sign Up</button>
@@ -62,7 +77,9 @@ export default function Login(props) {
                 />
                 <button type="button" className="signInBtn" onClick={loginUser}>Sign In</button>
                 <div className="divider"></div>
-            <button type="button" onClick={toggleLogin}>Google</button>
+                <button type="button" 
+                className="signInBtn"
+                onClick={signInGoogle}>Google</button>
             </div>
         </div>
     )
