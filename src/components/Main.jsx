@@ -5,7 +5,7 @@ import PostBox from "./PostBox";
 import Sidebar from "./Sidebar";
 import Submit from "./Submit";
 
-export default function Main() {
+export default function Main(props) {
 
     const [ isPosting, setIsPosting ] = useState(0)
     
@@ -22,7 +22,10 @@ export default function Main() {
             <Submit
             handlePosting={handlePosting} /> 
             <div className="sidebar">
-                <Sidebar />
+                <Sidebar
+                setIsLogin={props.setIsLogin}
+                isLogin={props.isLogin}
+                />
             </div>
                 </>
             ) : (
@@ -39,7 +42,10 @@ export default function Main() {
                 <Post />
             </div>
             <div className="sidebar">
-                <Sidebar />
+                <Sidebar 
+                setIsLogin={props.setIsLogin}
+                isLogin={props.isLogin}
+                />
             </div>
             </>
             )

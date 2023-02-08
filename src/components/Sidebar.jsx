@@ -5,7 +5,7 @@ export default function Sidebar(props) {
 
   const [ login, setLogin ] = useState(false)
 
-  const toggleLog = () => setLogin(prevState => !prevState)
+  const toggleLog = () => props.setIsLogin(prevState => !prevState)
 
     return (
         <div className="sidebar">

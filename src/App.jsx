@@ -12,6 +12,7 @@ import {
   getRedirectResult,
   connectAuthEmulator
 } from 'firebase/auth'
+import Login from './components/Login'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDgwMRwroLeGVLRdXUCfkZYo2wJZTlVb_o",
@@ -51,13 +52,23 @@ const auth = getAuth(app)
 
 function App() {
 
+    const [ isLogin, setIsLogin ] = useState(false)
+
   return (
     <div className="App">
      <Header />
      {/* Conditionally render 
      the main section depending on if user 
      is logged in or not */}
-     <Main />
+     {
+     isLogin ? 
+     <Login
+     setIsLogin={setIsLogin} /> : 
+     <Main
+     setIsLogin={setIsLogin}
+     isLogin={isLogin}
+      />
+      }
     </div>
   )
 }
