@@ -33,6 +33,7 @@ export default function Login(props) {
     const registerUser = async () => {
         try { 
             const user = await createUserWithEmailAndPassword(auth, regEmail, regPass)
+            props.setUser(user)
         } catch (error) {
             console.log(error.message)
         }
