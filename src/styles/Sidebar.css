@@ -23,7 +23,11 @@ ul > li {
     margin-bottom: 5px;
     padding: 5px 10px;
     border-radius: 25px;
-    
+}
+
+li > a {
+  display: block;
+  width: 100%;
 }
 
 ul > li:hover {
