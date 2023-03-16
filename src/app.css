@@ -1,8 +1,12 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   min-height: 100vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
@@ -23,14 +27,14 @@ html, body, #root {
 
 /* Main Start */
 
-.mainCt {
+.main__container {
   display: grid;
   gap: 20px;
-  grid-template-areas: 
-  ". create sidebar ."
-  ". filter sidebar ."
-  ". feed sidebar .";
-  grid-template-columns: .5fr 1fr .5fr .5fr;
+  grid-template-areas:
+    ". create sidebar ."
+    ". filter sidebar ."
+    ". feed sidebar .";
+  grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
   grid-template-rows: repeat(auto-fit, 1fr);
 }
 
@@ -52,7 +56,6 @@ html, body, #root {
 
 /* Main End */
 
-
 /* Post Box Start */
 .postBox {
   display: flex;
@@ -60,15 +63,16 @@ html, body, #root {
   justify-content: space-between;
   padding: 10px 15px;
   border-radius: 5px;
-  border: solid .75px var(--light);
+  border: solid 0.75px var(--light);
 }
 
-.postBox, .postBtn {
+.postBox,
+.postBtn {
   background-color: var(--lighter);
-
 }
 
-.postInput, .postBtn {  
+.postInput,
+.postBtn {
   color: var(--lightest);
   border-radius: 5px;
 }
@@ -86,14 +90,14 @@ html, body, #root {
 .postInput {
   width: 75%;
   padding: 5px 10px;
-  font-size: .9vw;  
+  font-size: 0.9vw;
   border: solid var(--light) 1px;
   background-color: var(--mid);
 }
 
 .postBtn {
   padding: 5px 15px;
-  font-size: .75vw;
+  font-size: 0.75vw;
   border: none;
 }
 
@@ -117,7 +121,7 @@ html, body, #root {
   background-color: var(--lighter);
   padding: 5px 15px;
   border-radius: 5px;
-  border: solid .75px var(--light);
+  border: solid 0.75px var(--light);
 }
 
 .filterBtn {
@@ -138,10 +142,9 @@ html, body, #root {
 }
 
 .filterText {
-  font-size: .9vw;
+  font-size: 0.9vw;
   margin-left: 5px;
 }
-
 
 /* Filter Box End */
 
@@ -151,7 +154,7 @@ html, body, #root {
   display: flex;
   background-color: var(--mid);
   border-radius: 5px;
-  border: .75px solid var(--light);
+  border: 0.75px solid var(--light);
 }
 
 .postBody {
@@ -167,11 +170,13 @@ html, body, #root {
   border-radius: 5px;
 }
 
-.upArrow, .downArrow {
+.upArrow,
+.downArrow {
   width: 25px;
 }
 
-.upArrow:hover, .downArrow:hover {
+.upArrow:hover,
+.downArrow:hover {
   cursor: pointer;
   background-color: var(--red);
   border-radius: 25px;
@@ -182,11 +187,12 @@ html, body, #root {
 }
 
 .subreddit {
-  font-size: .65vw;
+  font-size: 0.65vw;
   font-weight: 600;
 }
 
-.postTitle, .postText {
+.postTitle,
+.postText {
   color: var(--lightest-2);
 }
 
