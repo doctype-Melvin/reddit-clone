@@ -1,16 +1,18 @@
 import React from "react";
-import '../styles/Header.css'
+import "../styles/header.css";
 
 export default function Header() {
-    return (
-        <div className="headerCt">
-            <div className="logoCt">
-                <img className="logo" src="logo.png" />
-                <span className="appName">cloned<span className="redI">i</span>t</span>
-            </div>
-            <div className="searchCt">
-                <input className="searchBar" placeholder="Search"/>
-            </div>
-        </div>
-    )
+  return (
+    <section className="header__container">
+      <div className="logo__container">
+        <img className="logo" src="logo.png" />
+        <span className="app__name">
+          cloned<span className="red__character">i</span>t
+        </span>
+      </div>
+      <div className="search__bar_container">
+        <input className="search__bar" placeholder="Search" />
+      </div>
+    </section>
+  );
 }

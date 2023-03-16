@@ -1,53 +1,53 @@
 :root {
-    --main: #030303;
-    --lighter: #151516;
-    --mid: #1a1a1b;
-    --light: #343536;
-    --red: #ff4500;
-    --lightest: #d7dadc;
-    --lightest-2: #e9ebed;
-  }
+  --main: #030303;
+  --lighter: #151516;
+  --mid: #1a1a1b;
+  --light: #343536;
+  --red: #ff4500;
+  --lightest: #d7dadc;
+  --lightest-2: #e9ebed;
+}
 
-  .headerCt {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    width: 100%;
-    background-color: var(--mid);
-  }
+.header__container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: var(--mid);
+}
 
 .logo {
-    width: 35px;
-    background-color: var(--red);
-    border-radius: 25px;
-    margin-right: 10px;
+  width: 35px;
+  background-color: var(--red);
+  border-radius: 25px;
+  margin-right: 10px;
 }
 
-.logoCt {
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
+.logo__container {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
 }
 
-.appName {
-    font-size: 1.25vw;
+.app__Name {
+  font-size: 1.25vw;
 }
 
-.redI {
-    color: var(--red);
+.red__character {
+  color: var(--red);
 }
 
-.searchCt {
-    width: 30%;
-    margin-left: 5vw;
+.search__bar__container {
+  width: 30%;
+  margin-left: 5vw;
 }
 
-.searchBar {
-    background-color: var(--lighter);
-    color: var(--lightest);
-    font-size: 1vw;
-    border-radius: 25px;
-    padding: 3px 15px;
-    border: 1px solid var(--light);
-    width: 100%;
+.search__bar {
+  background-color: var(--lighter);
+  color: var(--lightest);
+  font-size: 1vw;
+  border-radius: 25px;
+  padding: 3px 15px;
+  border: 1px solid var(--light);
+  width: 100%;
 }
