@@ -1,0 +1,42 @@
+:root {
+  --main: #030303;
+  --lighter: #151516;
+  --mid: #1a1a1b;
+  --light: #343536;
+  --red: #ff4500;
+  --lightest: #d7dadc;
+  --lightest-2: #e9ebed;
+}
+
+.navigation {
+  width: fit-content;
+}
+
+.navigation > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 20px 0;
+}
+
+ul > li {
+  font-size: 1.1vw;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+li > a {
+  display: block;
+  width: 100%;
+}
+
+ul > li:hover {
+  background-color: var(--red);
+  color: var(--lightest-2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.username {
+  font-size: 0.7vw;
+}
